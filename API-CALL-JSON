@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Static Template</title>
+  </head>
+  <body>
+
+
+    <p>
+      latitude:<span id="lat"></span></br>
+      longitude:<span id="long"></span></br>
+    </p>
+
+
+
+    <script>
+      const issapi_url = "https://api.wheretheiss.at/v1/satellites/25544";
+      async function getISSData() {
+        const response = await fetch(issapi_url);
+        const data = await response.json();
+        console.log(data);
+        console.log(data.longitude);
+        console.log(data.latitude);
+
+        const {latitude, longitude}=data;
+
+      document.getElementById('lat').textContent = latitude;
+      document.getElementById('long').textContent = latitude;
+      }
+
+     
+
+      getISSData();
+      
+      
+      
+      
+    </script>
+  </body>
+</html>
+
+----------------
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Static Template</title>
+  </head>
+  <body>
+  
+ 
+      <script>
+  
+      const jsapi_url = "https://jsonplaceholder.typicode.com/todos/1";
+      async function getjsData() {
+        const response = await fetch(jsapi_url);
+        const data = await response.json();
+        console.log(data);
+        console.log(data.title);
+      }
+
+      getjsData();
+
+
+
+
+----------------
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Static Template</title>
+  </head>
+  <body>
+  
+      <script>
+
+      const regapi_url = "https://reqres.in/api/unknown";
+      async function getregData() {
+        const response = await fetch(regapi_url);
+        const data = await response.json();
+        console.log(data);
+        console.log(data.data[0].name);
+      }
+
+      getregData();
+    </script>
+  </body>
+</html>
