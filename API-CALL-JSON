@@ -135,3 +135,54 @@
   </body>
 </html>
 
+-------------------
+
+<!--API Call, fetch json u. pack es in den html tag mit Authorization token, header-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Static Template</title>
+  </head>
+  <body>
+    <h1>Fetch API</h1>
+    <p>Output:</br>
+      <span id="note"></span>
+    </p>
+    <script>
+      console.log("Es geht los");
+
+      Asa()
+        .then(response => {
+          console.log("yay");
+        })
+        .catch(error => {
+          console.log("Fehler!");
+          console.error(Fehler);
+        });
+
+      async function Asa() {
+        var bearer =
+          "Bearer " + "AuthorizationToken z.b. 12321321/sdlkfj32131";
+        const response = await fetch(
+          "API Endpoint URL",
+          {
+            method: "get",
+            headers: {
+              Authorization: bearer,
+              "Content-Type": "application/json"
+            }
+          }
+        );
+        const data = await response.json();
+        console.log(data.data.notes);
+
+
+        document.getElementById("note").textContent = data.data.notes;
+      }
+    </script>
+  </body>
+</html>
+
